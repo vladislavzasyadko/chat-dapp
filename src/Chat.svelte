@@ -70,7 +70,7 @@
 
     .randomClass {
         background-color: #444;
-        max-height: 500px;
+        height: 500px;
         overflow-y: auto;
     }
 
