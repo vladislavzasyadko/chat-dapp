@@ -10,6 +10,7 @@
 
 <style>
 	.app {
-
+		display: flex;
+		flex-direction: column;
 	}
 </style>

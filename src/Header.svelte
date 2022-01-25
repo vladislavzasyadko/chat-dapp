@@ -12,9 +12,9 @@ function singOut() {
     {#if $username}
         <div>
             <span>
-                Hello, {username}!
+                Hello, {JSON.stringify($username)}!
             </span>
-            <img src={`https://avatars.dicebear.com/api/initials/${username}.svg`} alt="#"/>
+            <img src={`https://avatars.dicebear.com/api/initials/${$username}.svg`} alt="#"/>
         </div>
         <button on:click={singOut}>Sign out</button>
     {:else}
@@ -29,5 +29,7 @@ function singOut() {
         padding: 20px;
         display: flex;
         justify-content: center;
+        width: 700px;
+        align-self: center;
     }
 </style>
