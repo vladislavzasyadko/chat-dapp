@@ -10,13 +10,12 @@ function singOut() {
 
 <header>
     {#if $username}
-        <div>
-            <span>
-                Hello, {JSON.stringify($username)}!
-            </span>
-            <img src={`https://avatars.dicebear.com/api/initials/${$username}.svg`} alt="#"/>
-        </div>
-        <button on:click={singOut}>Sign out</button>
+        <img class="image" src={`https://avatars.dicebear.com/api/initials/${$username}.svg`} alt="#"/>
+            <h3>
+                Hello, {$username}!
+            </h3>
+
+        <button class="signOutButton" on:click={singOut}>Sign out</button>
     {:else}
         <h1>Decentralized app hehe</h1>
     {/if}
@@ -24,12 +23,18 @@ function singOut() {
 
 <style>
     header {
-        background-color: aquamarine;
-        color: darkblue;
+        background-color: #2e4052;
+        color: #bdd9bf;
         padding: 20px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
         width: 700px;
         align-self: center;
     }
+    .image {
+        border-radius: 25%;
+        height: 50px;
+    }
+
 </style>

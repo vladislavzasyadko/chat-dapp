@@ -34,6 +34,7 @@
         const secret = await SEA.encrypt(newMessage, '#something');
         const message = user.get('all').set({what: secret});
         const index = new Date().toISOString();
+        newMessage = '';
         db.get('chat').get(index).put(message);
     }
 </script>
@@ -51,8 +52,8 @@
     </div>
 
     <form class="userInput" on:submit|preventDefault={sendMessage}>
-        <input type="text" placeholder="Type a message..." bind:value={newMessage} maxlength="100"/>
-        <button type="submit" disabled={!newMessage}>💥</button>
+        <input type="text" placeholder="Type your message..." bind:value={newMessage} maxlength="100"/>
+        <button type="submit" disabled={!newMessage}>Send💥</button>
     </form>
 {:else}
     <Login/>
@@ -69,12 +70,30 @@
 
     .randomClass {
         background-color: #444;
-        max-height: 400px;
+        max-height: 500px;
         overflow-y: auto;
     }
 
     .userInput {
         color: blue;
         align-self: center;
+    }
+
+    form {
+        width: 700px;
+        background-color: #ffc857;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    input {
+        width: 450px;
+        padding: 15px;
+        border: none;
+        outline: none;
+        margin: 10px;
     }
 </style>
